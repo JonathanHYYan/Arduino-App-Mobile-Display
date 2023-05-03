@@ -7,6 +7,7 @@ const PhoneModel = () => {
 const phoneList = [
     { name: "iPhone 12", height: 146.7, width: 71.5 },
     { name: "Pixel 5", height: 144.7, width: 70.4 },
+    { name: "Samsung Galaxy Note II", height: 151.1, width: 80.5 },
     ];
   const [selectedPhone, setSelectedPhone] = useState(0);
 
