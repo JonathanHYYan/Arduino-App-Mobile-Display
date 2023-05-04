@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MobileTemplate } from "./PhoneModelStyles";
+import SignIn from "./SignIn/SignIn";
 
 
 
@@ -33,6 +34,7 @@ const phoneList = [
   return (
     <>
     <MobileTemplate style={phoneStyle}>
+      <SignIn/>
     </MobileTemplate>
     <select value={selectedPhone} onChange={handleChange}>
         {phoneOptions}
