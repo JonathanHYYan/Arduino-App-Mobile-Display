@@ -54,6 +54,7 @@ export const Input = styled.input`
 `
 
 export const SignButton = styled.div`
+  cursor: pointer;
     background-color: #37c8a5;
     height: 20.5px;
     width: 5rem;
