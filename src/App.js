@@ -1,11 +1,11 @@
 import PhoneModel from "./Components/PhoneModel";
-import { MainPage } from "./AppStyles";
+import { Page } from "./AppStyles";
 
 function App() {
   return (
-    <MainPage>
+    <Page>
       <PhoneModel />
-    </MainPage>
+    </Page>
   );
 }
 
