@@ -13,7 +13,7 @@ const SignIn = () => {
         <Text><br/><br/><br/>Welcome back to your smart controller before you can access your appliances we will need you to verify yourself with a password for security purposes.</Text>
         <Text>Please sign in to verify access to your smart home tools</Text>
         <Password>
-            <Input/>
+            <Input type="password"/>
             <SignButton>Sign In</SignButton>
         </Password>
       </AlertMain>
