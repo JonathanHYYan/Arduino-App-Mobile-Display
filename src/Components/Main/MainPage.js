@@ -1,14 +1,15 @@
-import { DefaultPage, Nav } from "./MainPageStyles";
+import { Controls, DefaultPage, Nav } from "./MainPageStyles";
 
 const  MainPage = () => {
 
     return (
-        <MainPage>
+        <DefaultPage>
             <Nav>
-
             </Nav>
-        </MainPage>
+            <Controls>
+            </Controls>
+        </DefaultPage>
     )
 }
 
-export default DefaultPage;
+export default MainPage;

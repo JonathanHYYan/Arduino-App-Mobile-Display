@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { MobileTemplate } from "./PhoneModelStyles";
 import SignIn from "./SignIn/SignIn";
+import MainPage from "./Main/MainPage";
 
 
-
-const PhoneModel = () => {
+const Template = () => {
 const phoneList = [
     { name: "iPhone 12", height: 146.7, width: 71.5 },
     { name: "Pixel 5", height: 144.7, width: 70.4 },
@@ -34,7 +34,8 @@ const phoneList = [
   return (
     <>
     <MobileTemplate style={phoneStyle}>
-      <SignIn/>
+      {/* <SignIn/> */}
+      <MainPage/>
     </MobileTemplate>
     <select value={selectedPhone} onChange={handleChange}>
         {phoneOptions}
@@ -43,4 +44,4 @@ const phoneList = [
   );
 };
 
-export default PhoneModel;
+export default Template;

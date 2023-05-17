@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const MainPage = styled.div`
+export const DefaultPage = styled.div`
     display:flex;
+    height:100%;
 `;
 
 export const Nav = styled.div`
-    backrgound-color: #4573C8;
-    height:100vh;
-    with: 20%;
+    background-color: #4573C8;
+    width: 35%;
+    height:100%;
 `;
+
+export const Controls = styled.div``;
