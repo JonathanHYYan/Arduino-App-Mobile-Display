@@ -36,7 +36,7 @@ const Template = () => {
         <BrowserRouter>
         <Routes>
           <Route path="/" element={ <SignIn />}/>
-          <Route path="/main" element={ <MainPage />}/>           
+          <Route path="/main" element={ <MainPage />}/>
         </Routes>
         </BrowserRouter>
       </MobileTemplate>
