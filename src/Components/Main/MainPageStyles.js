@@ -1,14 +1,60 @@
 import styled from "styled-components";
+import { GiKnifeFork } from "react-icons/gi";
+import { FaBed, FaPlus } from "react-icons/fa";
 
 export const DefaultPage = styled.div`
-    display:flex;
-    height:100%;
+  display: flex;
+  height: 100%;
 `;
 
 export const Nav = styled.div`
-    background-color: #4573C8;
-    width: 35%;
-    height:100%;
+  box-sizing: border-box;
+  padding: 1.2em 0;
+  background-color: #4573c8;
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Icon = styled.div`
+  cursor: pointer;
+  background-color: #d87b3f;
+  height: 4em;
+  width: 4em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+`;
+export const AddIcon = styled.div`
+  cursor: pointer;
+  background-color: #9d9c9a;
+  opacity: 0.65;
+  height: 4em;
+  width: 4em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+`;
+
+export const Kitchen = styled(GiKnifeFork)`
+  width: 3em;
+  height: auto;
+`;
+
+export const Bed = styled(FaBed)`
+  width: 3em;
+  height: auto;
+`;
+
+export const Plus = styled(FaPlus)`
+  width: 3em;
+  height: auto;
 `;
 
 export const Controls = styled.div``;
