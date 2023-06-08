@@ -9,6 +9,7 @@ import {
   Plus,
 } from "./MainPageStyles";
 import { data } from "../../Assets/data";
+import Toggle from "../Utlity/Toggle";
 
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
@@ -37,7 +38,7 @@ const MainPage = () => {
           <Plus />
         </AddIcon>
       </Nav>
-      <Controls></Controls>
+      <Controls><Toggle/></Controls>
     </DefaultPage>
   );
 };
