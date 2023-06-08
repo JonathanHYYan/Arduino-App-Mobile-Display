@@ -21,14 +21,14 @@ const SignIn = () => {
       <AlertMain>
         <BackgorundLogo src={logo} />
         <Text>
-          <br />
-          <br />
-          <br />
           Welcome back to your smart controller before you can access your
           appliances we will need you to verify yourself with a password for
           security purposes.
+          <br />
+          <br />
+          <br />
+          Please sign in to verify access to your smart home tools
         </Text>
-        <Text>Please sign in to verify access to your smart home tools</Text>
         <Password>
           <Input type="password" />
           <Link to="/main">
