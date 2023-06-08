@@ -36,7 +36,7 @@ export const BackgorundLogo = styled.img`
 `;
 
 export const Text = styled.p`
-  margin-bottom: 1.5rem;
+  margin: 4rem 0 1.5rem 0;
   color: white;
   width: 90%;
   z-index: 1;
