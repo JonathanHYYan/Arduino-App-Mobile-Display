@@ -1,11 +1,13 @@
 import {
   AddIcon,
+  AddControl,
   Bed,
-  Controls,
+  Appliance,
+  Appliances,
   DefaultPage,
   Icon,
   Kitchen,
-  Nav,
+  Rooms,
   Plus,
 } from "./MainPageStyles";
 import { data } from "../../Assets/data";
@@ -16,29 +18,40 @@ const MainPage = () => {
   // Based on the data the applicance icon should show in the nav and the options in controls
   // lighter shade of orange #F5B181
 
-  const icons = data.map((obj) => {
-    return (
-      <Icon key={obj.icon}>
-        {obj.icon === "kitchen" ? (
-          <Kitchen />
-        ) : obj.icon === "bed" ? (
-          <Bed />
-        ) : (
-          ""
-        )}
-      </Icon>
-    );
+  const rooms = data.map((obj) => {
+    const roomSelect =
+      obj.room === "kitchen" ? <Kitchen /> : obj.room === "bed" ? <Bed /> : "";
+
+    return <Icon key={obj.room}>{roomSelect}</Icon>;
+  });
+
+  const appliances = data.map((obj) => {
+    const controls = obj.appliance.names.map((name, index) => {
+      return (
+        <Appliance key={name}>
+          <p>{name}</p>
+          <Toggle state={obj.appliance.boolean[index]} />
+        </Appliance>
+      );
+    });
+    return <>{controls}</>;
   });
 
   return (
     <DefaultPage>
-      <Nav>
-        {icons}
+      <Rooms>
+        {rooms}
         <AddIcon>
           <Plus />
         </AddIcon>
-      </Nav>
-      <Controls></Controls>
+      </Rooms>
+      <Appliances>
+        <h2>Applicances</h2>
+        {appliances}
+        <AddControl>
+          <Plus />
+        </AddControl>
+      </Appliances>
     </DefaultPage>
   );
 };

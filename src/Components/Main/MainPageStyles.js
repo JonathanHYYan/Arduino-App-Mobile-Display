@@ -7,7 +7,7 @@ export const DefaultPage = styled.div`
   height: 100%;
 `;
 
-export const Nav = styled.div`
+export const Rooms = styled.div`
   box-sizing: border-box;
   padding: 1.2em 0;
   background-color: #4573c8;
@@ -32,7 +32,7 @@ export const Icon = styled.div`
 export const AddIcon = styled.div`
   cursor: pointer;
   background-color: #9d9c9a;
-  opacity: 0.65;
+  opacity: 0.75;
   height: 4em;
   width: 4em;
   border-radius: 10px;
@@ -53,8 +53,35 @@ export const Bed = styled(FaBed)`
 `;
 
 export const Plus = styled(FaPlus)`
-  width: 3em;
-  height: auto;
+  width: auto;
+  height: 80%;
+  color: white;
 `;
 
-export const Controls = styled.div``;
+export const Appliances = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Appliance = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width:80%;
+  align-items: center;
+`;
+
+export const AddControl = styled.div`
+  cursor: pointer;
+  background-color: #9d9c9a;
+  opacity: 0.65;
+  height: 2em;
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+`;
