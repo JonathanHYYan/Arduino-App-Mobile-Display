@@ -4,15 +4,15 @@ export const ToggleSwitch = styled.input`
   position: relative;
   appearance: none;
   width: 3em;
-  height: 1.4em;
-  background: #ccc;
+  height: 1.5em;
+  background: #7da6ff;
   border-radius: 50px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 0.4s;
 
   &:checked {
-    background: #7da6ff;
+    background: #0754E3;
 
     &:after {
       left: 60%;
@@ -24,7 +24,7 @@ export const ToggleSwitch = styled.input`
     content: "";
     width: 1em;
     height: 1em;
-    top: 12%;
+    top: 16%;
     left: 5%;
     background: #fff;
     border-radius: 50%;
