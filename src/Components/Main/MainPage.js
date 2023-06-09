@@ -38,7 +38,7 @@ const MainPage = () => {
           <Plus />
         </AddIcon>
       </Nav>
-      <Controls><Toggle/></Controls>
+      <Controls></Controls>
     </DefaultPage>
   );
 };
