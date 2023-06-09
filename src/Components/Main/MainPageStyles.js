@@ -12,6 +12,7 @@ export const Rooms = styled.div`
   padding: 1.2em 0;
   background-color: #4573c8;
   width: 35%;
+  max-width: 6.5em;
   height: 100%;
   display: flex;
   align-items: center;
@@ -21,8 +22,8 @@ export const Rooms = styled.div`
 export const Icon = styled.div`
   cursor: pointer;
   background-color: #d87b3f;
-  height: 4em;
-  width: 4em;
+  height: 3.7em;
+  width: 3.7em;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -33,8 +34,8 @@ export const AddIcon = styled.div`
   cursor: pointer;
   background-color: #9d9c9a;
   opacity: 0.75;
-  height: 4em;
-  width: 4em;
+  height: 3.7em;
+  width: 3.7em;
   border-radius: 10px;
   display: flex;
   justify-content: center;
