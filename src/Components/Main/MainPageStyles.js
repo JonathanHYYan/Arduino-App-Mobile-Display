@@ -58,11 +58,18 @@ export const Plus = styled(FaPlus)`
   color: white;
 `;
 
-export const Appliance = styled.div`
+export const Appliances = styled.div`
   box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+`;
+
+export const Appliance = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width:80%;
   align-items: center;
 `;
 

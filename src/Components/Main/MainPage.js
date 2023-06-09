@@ -3,6 +3,7 @@ import {
   AddControl,
   Bed,
   Appliance,
+  Appliances,
   DefaultPage,
   Icon,
   Kitchen,
@@ -18,33 +19,22 @@ const MainPage = () => {
   // lighter shade of orange #F5B181
 
   const rooms = data.map((obj) => {
-    return (
-      <Icon key={obj.room}>
-        {obj.room === "kitchen" ? (
-          <Kitchen />
-        ) : obj.room === "bed" ? (
-          <Bed />
-        ) : (
-          ""
-        )}
-      </Icon>
-    );
+    const roomSelect =
+      obj.room === "kitchen" ? <Kitchen /> : obj.room === "bed" ? <Bed /> : "";
+
+    return <Icon key={obj.room}>{roomSelect}</Icon>;
   });
 
   const appliances = data.map((obj) => {
-    const controls = obj.appliance.names.map((names, index) => {
+    const controls = obj.appliance.names.map((name, index) => {
       return (
-        <>
-        <div>{names}</div>
-        <div>{obj.appliance.boolean[index]}</div>
-        </>
+        <Appliance key={name}>
+          <p>{name}</p>
+          <Toggle state={obj.appliance.boolean[index]} />
+        </Appliance>
       );
-    })
-    return (
-      <>
-        <div>{controls}</div>
-      </>
-    );
+    });
+    return <>{controls}</>;
   });
 
   return (
@@ -55,13 +45,13 @@ const MainPage = () => {
           <Plus />
         </AddIcon>
       </Rooms>
-      <Appliance>
+      <Appliances>
         <h2>Applicances</h2>
         {appliances}
         <AddControl>
           <Plus />
         </AddControl>
-      </Appliance>
+      </Appliances>
     </DefaultPage>
   );
 };
