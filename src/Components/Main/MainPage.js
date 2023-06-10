@@ -1,5 +1,4 @@
 import {
-  AddIcon,
   AddControl,
   Appliance,
   Appliances,
