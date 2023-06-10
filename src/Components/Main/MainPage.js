@@ -3,7 +3,6 @@ import {
   Appliance,
   Appliances,
   DefaultPage,
-  Rooms,
   Plus,
 } from "./MainPageStyles";
 import { data } from "../../Assets/data";
