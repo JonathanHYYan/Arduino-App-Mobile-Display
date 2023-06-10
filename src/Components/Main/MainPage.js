@@ -3,7 +3,6 @@ import {
   Appliance,
   Appliances,
   DefaultPage,
-  Rooms,
   Plus,
 } from "./MainPageStyles";
 import { data } from "../../Assets/data";
@@ -29,9 +28,7 @@ const MainPage = () => {
 
   return (
     <DefaultPage>
-      <Rooms>
-        <RoomIcons/>
-      </Rooms>
+      <RoomIcons />
       <Appliances>
         <h2>Applicances</h2>
         {appliances}
