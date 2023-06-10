@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { GiKnifeFork } from "react-icons/gi";
-import { FaBed, FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 export const DefaultPage = styled.div`
   display: flex;
@@ -17,40 +16,6 @@ export const Rooms = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
-
-export const Icon = styled.div`
-  cursor: pointer;
-  background-color: #d87b3f;
-  height: 3.7em;
-  width: 3.7em;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-`;
-export const AddIcon = styled.div`
-  cursor: pointer;
-  background-color: #9d9c9a;
-  opacity: 0.75;
-  height: 3.7em;
-  width: 3.7em;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-`;
-
-export const Kitchen = styled(GiKnifeFork)`
-  width: 3em;
-  height: auto;
-`;
-
-export const Bed = styled(FaBed)`
-  width: 3em;
-  height: auto;
 `;
 
 export const Plus = styled(FaPlus)`
@@ -70,7 +35,7 @@ export const Appliances = styled.div`
 export const Appliance = styled.div`
   display: flex;
   justify-content: space-between;
-  width:80%;
+  width: 80%;
   align-items: center;
 `;
 
