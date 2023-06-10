@@ -29,9 +29,7 @@ const MainPage = () => {
 
   return (
     <DefaultPage>
-      <Rooms>
-        <RoomIcons/>
-      </Rooms>
+      <RoomIcons />
       <Appliances>
         <h2>Applicances</h2>
         {appliances}

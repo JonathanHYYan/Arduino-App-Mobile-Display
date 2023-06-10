@@ -6,18 +6,6 @@ export const DefaultPage = styled.div`
   height: 100%;
 `;
 
-export const Rooms = styled.div`
-  box-sizing: border-box;
-  padding: 1.2em 0;
-  background-color: #4573c8;
-  width: 35%;
-  max-width: 6.5em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;
-
 export const Plus = styled(FaPlus)`
   width: auto;
   height: 80%;

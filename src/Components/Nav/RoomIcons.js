@@ -1,4 +1,4 @@
-import { Kitchen, Bed, Icon, Plus, AddIcon } from "./RoomiconsStyles";
+import { Kitchen, Bed, Icon, Plus, AddIcon, Rooms } from "./RoomiconsStyles";
 import { data } from "../../Assets/data";
 
 const RoomIcons = () => {
@@ -10,12 +10,12 @@ const RoomIcons = () => {
     });
 
     return(
-        <>
+        <Rooms>
         {rooms}
         <AddIcon>
             <Plus/>
         </AddIcon>
-        </>
+        </Rooms>
     )
 };
 
