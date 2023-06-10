@@ -9,14 +9,14 @@ const RoomIcons = () => {
     return <Icon key={obj.room}>{roomSelect}</Icon>;
   });
 
-    return(
-        <Rooms>
-        {rooms}
-        <AddIcon>
-            <Plus/>
-        </AddIcon>
-        </Rooms>
-    )
+  return (
+    <Rooms>
+      {rooms}
+      <AddIcon>
+        <Plus />
+      </AddIcon>
+    </Rooms>
+  );
 };
 
 export default RoomIcons;
