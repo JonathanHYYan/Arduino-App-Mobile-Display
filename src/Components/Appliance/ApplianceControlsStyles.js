@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaPlus } from "react-icons/fa";
+import { BsFillGearFill } from "react-icons/bs";
 
 export const Appliances = styled.div`
   box-sizing: border-box;
@@ -33,4 +34,15 @@ export const AddControl = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
+`;
+
+export const Settings = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+`;
+
+export const Gear = styled(BsFillGearFill)`
+  color: grey;
 `;
