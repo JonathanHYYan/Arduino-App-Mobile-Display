@@ -2,11 +2,14 @@ import { Appliances, Appliance, AddControl, Plus } from "./ApplianceControlsStyl
 import { data } from "../../Assets/data";
 import Toggle from "../Utlity/Toggle";
 
-const ApplianceControls = () => {
+const ApplianceControls = ({state}) => {
   const appliances = data.map((obj) => {
     const controls = obj.appliance.names.map((name, index) => {
       return (
-        <Appliance key={name}>
+        <Appliance 
+        key={name}
+        selected={state[index]}
+        >
           <p>{name}</p>
           <Toggle state={obj.appliance.boolean[index]} />
         </Appliance>
