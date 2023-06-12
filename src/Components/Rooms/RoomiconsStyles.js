@@ -16,7 +16,7 @@ export const Rooms = styled.div`
 
 export const Icon = styled.div`
   cursor: pointer;
-  background-color: #d87b3f;
+  background-color:${({selected})=>(selected ? '#d87b3f' : '#FCA263')} ;
   height: 3.7em;
   width: 3.7em;
   border-radius: 10px;
