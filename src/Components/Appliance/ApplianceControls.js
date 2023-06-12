@@ -1,4 +1,11 @@
-import { Appliances, Appliance, AddControl, Plus } from "./ApplianceControlsStyles";
+import {
+  Appliances,
+  Appliance,
+  AddControl,
+  Plus,
+  Gear,
+  Settings,
+} from "./ApplianceControlsStyles";
 import { data } from "../../Assets/data";
 import Toggle from "../Utlity/Toggle";
 
@@ -8,7 +15,10 @@ const ApplianceControls = () => {
       return (
         <Appliance key={name}>
           <p>{name}</p>
-          <Toggle state={obj.appliance.boolean[index]} />
+          <Settings>
+            <Toggle state={obj.appliance.boolean[index]} />
+            <Gear />
+          </Settings>
         </Appliance>
       );
     });
