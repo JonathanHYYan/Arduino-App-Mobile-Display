@@ -11,7 +11,7 @@ export const Appliances = styled.div`
 `;
 
 export const Appliance = styled.div`
-  display: flex;
+  display: ${({selected})=> (selected ? 'flex' : 'none')};
   justify-content: space-between;
   width: 80%;
   align-items: center;
