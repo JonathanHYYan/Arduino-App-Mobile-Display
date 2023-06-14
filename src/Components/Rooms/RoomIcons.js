@@ -1,8 +1,7 @@
 import { Kitchen, Bed, Icon, Plus, AddIcon, Rooms } from "./RoomiconsStyles";
 import { data } from "../../Assets/data";
-import { useState } from "react";
 
-const RoomIcons = ({state, onClick }) => {
+const RoomIcons = ({ state, onClick }) => {
   const rooms = data.map((obj, index) => {
     const roomSelect =
       obj.room === "kitchen" ? <Kitchen /> : obj.room === "bed" ? <Bed /> : "";
@@ -17,11 +16,15 @@ const RoomIcons = ({state, onClick }) => {
     );
   });
 
+  const addRoom = () => {
+    onClick(null);
+  };
+
   return (
     <Rooms>
       {rooms}
       <AddIcon>
-        <Plus />
+        <Plus onClick={addRoom} />
       </AddIcon>
     </Rooms>
   );

@@ -11,7 +11,7 @@ export const Appliances = styled.div`
 `;
 
 export const Appliance = styled.div`
-  display: ${({selected})=> (selected ? 'flex' : 'none')};
+  display: ${({ selected }) => (selected ? "flex" : "none")};
   justify-content: space-between;
   width: 80%;
   align-items: center;
@@ -45,4 +45,10 @@ export const Settings = styled.div`
 
 export const Gear = styled(BsFillGearFill)`
   color: grey;
+`;
+
+export const IconGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 `;

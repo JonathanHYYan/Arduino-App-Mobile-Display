@@ -27,12 +27,12 @@ export const Icon = styled.div`
 `;
 
 export const Kitchen = styled(GiKnifeFork)`
-  width: 3em;
+  width: 80%;
   height: auto;
 `;
 
 export const Bed = styled(FaBed)`
-  width: 3em;
+  width: 80%;
   height: auto;
 `;
 
