@@ -14,7 +14,6 @@ const Template = () => {
 
   const handleChange = (e) => {
     setSelectedPhone(e.target.value);
-    console.log(e.target.value);
   };
 
   const phoneOptions = phoneList.map((phone, index) => {

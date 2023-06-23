@@ -10,8 +10,7 @@ import {
 import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
 
-const ApplianceControls = ({ rooms, state, newRooms }) => {
-
+const ApplianceControls = ({ rooms, state, newRooms, viewSettings, setViewSettings }) => {
   const appliances = rooms.map((obj) => {
     const controls = obj.appliance.names.map((name, index) => {
       return (
@@ -19,7 +18,7 @@ const ApplianceControls = ({ rooms, state, newRooms }) => {
           <p>{name}</p>
           <Settings>
             <Toggle state={obj.appliance.boolean[index]} />
-            <Gear />
+            <Gear onClick={()=>setViewSettings(true)}/>
           </Settings>
         </Appliance>
       );
@@ -29,22 +28,25 @@ const ApplianceControls = ({ rooms, state, newRooms }) => {
 
   const updateRooms = (room) => {
     newRooms(room);
+    setViewSettings(false);
   };
+
 
   return (
     <Appliances>
       <h2>Applicances</h2>
-      {appliances}
+      {!viewSettings && appliances}
       {state.includes(null) && (
         <IconGrid selected={true}>
           <NewIcon updateRooms={updateRooms} />
         </IconGrid>
       )}
-      {!state.includes(null) && (
+      {!state.includes(null) && !viewSettings ? (
         <AddControl>
           <Plus />
         </AddControl>
-      )}
+      ): null}
+
     </Appliances>
   );
 };
