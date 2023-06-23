@@ -7,19 +7,12 @@ import {
   Settings,
   IconGrid,
 } from "./ApplianceControlsStyles";
-import { data } from "../../Assets/data";
 import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
-import { useState, useEffect } from "react";
 
-const ApplianceControls = ({ state, newRooms }) => {
-  const [dataState, setDataState] = useState(data);
+const ApplianceControls = ({ rooms, state, newRooms }) => {
 
-  // useEffect(() => {
-  //   console.log(dataState);
-  // }, [dataState]);
-
-  const appliances = dataState.map((obj) => {
+  const appliances = rooms.map((obj) => {
     const controls = obj.appliance.names.map((name, index) => {
       return (
         <Appliance key={index} selected={state[index]}>
