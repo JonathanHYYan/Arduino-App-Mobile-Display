@@ -48,7 +48,7 @@ const MainPage = () => {
         selectRoom={selectRoom}
         rooms={database}
       />
-      <ApplianceControls state={roomSelected} newRooms={newRooms} />
+      <ApplianceControls rooms={database} state={roomSelected} newRooms={newRooms} />
     </DefaultPage>
   );
 };
