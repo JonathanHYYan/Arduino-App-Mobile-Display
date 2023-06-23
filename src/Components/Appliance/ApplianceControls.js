@@ -12,7 +12,7 @@ import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
 import { useState, useEffect } from "react";
 
-const ApplianceControls = ({ state, newRooms }) => {
+const ApplianceControls = ({ state, newRooms, newAppliance }) => {
   const [dataState, setDataState] = useState(data);
 
   // useEffect(() => {
@@ -34,8 +34,12 @@ const ApplianceControls = ({ state, newRooms }) => {
     return <>{controls}</>;
   });
 
-  const updateRooms = (room) => {
+  const addRoom = (room) => {
     newRooms(room);
+  };
+
+  const addApp = (room, appName) => {
+    newAppliance(room, appName);
   };
 
   return (
@@ -44,11 +48,11 @@ const ApplianceControls = ({ state, newRooms }) => {
       {appliances}
       {state.includes(null) && (
         <IconGrid selected={true}>
-          <NewIcon updateRooms={updateRooms} />
+          <NewIcon addRoom={addRoom} />
         </IconGrid>
       )}
       {!state.includes(null) && (
-        <AddControl>
+        <AddControl onClick={() =>{addApp('roomName', 'appName')}}>
           <Plus />
         </AddControl>
       )}

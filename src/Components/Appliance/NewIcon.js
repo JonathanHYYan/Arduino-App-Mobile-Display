@@ -1,9 +1,9 @@
 import { Grid, GridIcon } from "./NewIconstyles";
 import { Bed, Kitchen } from "../Rooms/RoomiconsStyles";
 
-const NewIcon = ({updateRooms}) => {
+const NewIcon = ({addRoom}) => {
   const newRooms = (room) => {
-    updateRooms(room);
+    addRoom(room);
   }
 
   const RoomIcons = [

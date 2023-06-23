@@ -37,8 +37,11 @@ const MainPage = () => {
     const updateRooms = roomSelected.map(() => {
       return false;
     });
-
     setRoomSelected([...updateRooms, true]);
+  };
+
+  const newAppliance = (room, name) => {
+
   };
 
   return (
@@ -48,7 +51,7 @@ const MainPage = () => {
         selectRoom={selectRoom}
         rooms={database}
       />
-      <ApplianceControls state={roomSelected} newRooms={newRooms} />
+      <ApplianceControls state={roomSelected} newRooms={newRooms} newAppliance={newAppliance}/>
     </DefaultPage>
   );
 };
