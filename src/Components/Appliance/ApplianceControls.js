@@ -10,8 +10,7 @@ import {
 import { data } from "../../Assets/data";
 import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ApplianceControls = ({ state, newRooms }) => {
   const [dataState, setDataState] = useState(data);
