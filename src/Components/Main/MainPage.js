@@ -1,17 +1,14 @@
 import { DefaultPage } from "./MainPageStyles";
 import RoomIcons from "../Rooms/RoomIcons";
 import ApplianceControls from "../Appliance/ApplianceControls";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { data } from "../../Assets/data";
 
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
   const [database, setDataBase] = useState(data);
   const [roomSelected, setRoomSelected] = useState([true, false]);
-
-  useEffect(() => {
-    // console.log(roomSelected);
-  }, [roomSelected]);
+  const [viewSettings, setViewSettings] = useState(false);
 
   const selectRoom = (index) => {
     const updateRooms = roomSelected.map((room, i) => {
@@ -47,8 +44,15 @@ const MainPage = () => {
         state={roomSelected}
         selectRoom={selectRoom}
         rooms={database}
+        setViewSettings={setViewSettings}
       />
-      <ApplianceControls rooms={database} state={roomSelected} newRooms={newRooms} />
+      <ApplianceControls
+        viewSettings={viewSettings}
+        setViewSettings={setViewSettings}
+        rooms={database}
+        state={roomSelected}
+        newRooms={newRooms}
+      />
     </DefaultPage>
   );
 };

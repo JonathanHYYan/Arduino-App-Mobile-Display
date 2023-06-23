@@ -44,6 +44,7 @@ export const Settings = styled.div`
 `;
 
 export const Gear = styled(BsFillGearFill)`
+  cursor: pointer;
   color: grey;
 `;
 
