@@ -8,7 +8,7 @@ const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
   const [database, setDataBase] = useState(data);
   const [roomSelected, setRoomSelected] = useState([true, false]);
-  const [viewSettings, setViewSettings] = useState(false);
+  const [settingToggle, setSettingToggle] = useState(false);
 
   const selectRoom = (index) => {
     const updateRooms = roomSelected.map((room, i) => {
@@ -19,6 +19,7 @@ const MainPage = () => {
       }
     });
     setRoomSelected(updateRooms);
+    setSettingToggle(false);
   };
 
   const newRooms = (room) => {
@@ -44,11 +45,11 @@ const MainPage = () => {
         state={roomSelected}
         selectRoom={selectRoom}
         rooms={database}
-        setViewSettings={setViewSettings}
+        setSettingToggle={setSettingToggle}
       />
       <ApplianceControls
-        viewSettings={viewSettings}
-        setViewSettings={setViewSettings}
+        settingToggle={settingToggle}
+        setSettingToggle={setSettingToggle}
         rooms={database}
         state={roomSelected}
         newRooms={newRooms}
