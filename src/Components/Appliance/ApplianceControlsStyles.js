@@ -53,3 +53,23 @@ export const IconGrid = styled.div`
   flex-direction: column;
   width: 80%;
 `;
+
+export const SettingsControl = styled.div`
+width: 90%;
+margin: auto;
+`;
+
+export const Week = styled.div`
+display: flex;
+justify-content: space-evenly;
+`;
+
+export const Times = styled.div`
+margin: 3em 0  3em 0;
+`;
+
+export const Alert = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+`;
