@@ -19,11 +19,6 @@ const ApplianceControls = ({
   settingToggle,
   setSettingToggle,
 }) => {
-  const [settingDisplay, setSettingDisplay] = useState({
-    name: null,
-    index: null,
-  });
-
   // Variable holiding appliances currently registered to the device rendered from props.rooms
   const appliances = rooms.map((room) => {
     const controls = room.appliance.names.map((name, index) => {
@@ -42,7 +37,6 @@ const ApplianceControls = ({
 
   const updateSettings = (name, index) => {
     setSettingToggle(!settingToggle);
-    setSettingDisplay(name, index);
   };
 
   const updateRooms = (room) => {
