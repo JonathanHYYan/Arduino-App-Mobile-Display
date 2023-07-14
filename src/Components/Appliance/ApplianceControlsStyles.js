@@ -56,7 +56,7 @@ export const IconGrid = styled.div`
 
 export const SettingsControl = styled.div`
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 `;
 
 export const Week = styled.div`
