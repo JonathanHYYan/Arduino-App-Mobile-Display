@@ -19,18 +19,21 @@ const ApplianceControls = ({
   settingToggle,
   setSettingToggle,
 }) => {
-  const [activeSetting, setActiveSetting] = useState({name: null, index: null})
+  const [activeSetting, setActiveSetting] = useState({
+    name: null,
+    index: null,
+  });
   // Variable holiding appliances currently registered to the device rendered from props.rooms
   const appliances = rooms.map((room) => {
     const controls = room.appliance.names.map((name, index) => {
       return (
-          <Appliance key={index} selected={state[index]}>
-            <p>{name}</p>
-            <Settings>
-              <Toggle state={room.appliance.boolean[index]} />
-              <Gear onClick={() => updateSettings(name, index)} />
-            </Settings>
-          </Appliance>
+        <Appliance key={index} selected={state[index]}>
+          <p>{name}</p>
+          <Settings>
+            <Toggle state={room.appliance.boolean[index]} />
+            <Gear onClick={() => updateSettings(name, index)} />
+          </Settings>
+        </Appliance>
       );
     });
     return <>{controls}</>;
@@ -38,7 +41,7 @@ const ApplianceControls = ({
 
   const updateSettings = (name, index) => {
     setSettingToggle(!settingToggle);
-    setActiveSetting({name: name, index: index});
+    setActiveSetting({ name: name, index: index });
   };
 
   const updateRooms = (room) => {
@@ -51,7 +54,7 @@ const ApplianceControls = ({
       {!settingToggle ? (
         <h2>Applicances</h2>
       ) : (
-        <ApplicationSettings rooms={rooms} activeSetting={activeSetting}/>
+        <ApplicationSettings rooms={rooms} activeSetting={activeSetting} />
       )}
       {!settingToggle && appliances}
       {state.includes(null) && (

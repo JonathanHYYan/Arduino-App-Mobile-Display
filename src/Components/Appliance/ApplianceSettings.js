@@ -1,6 +1,7 @@
 import Toggle from "../Utlity/Toggle";
 import { SettingsControl, Week, Times, Alert } from "./ApplianceControlsStyles";
 import DayIcons from "../Utlity/DayIcons";
+import EditableText from "../Utlity/EditableText";
 
 const ApplicationSettings = ({ rooms, activeSetting }) => {
   // Variable holding setting jsx render props.rooms if settings is avaibable
@@ -12,7 +13,7 @@ const ApplicationSettings = ({ rooms, activeSetting }) => {
       ) {
         return (
           <>
-            <h2>{room.appliance.names[index]}</h2>
+            <EditableText text={room.appliance.names[index]} textTag={"h2"} />
             <SettingsControl key={index} selected={true}>
               <p>Select days device will be active: </p>
               <Week>
