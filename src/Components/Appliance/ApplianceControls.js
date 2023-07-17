@@ -14,6 +14,7 @@ import ApplicationSettings from "./ApplianceSettings";
 
 const ApplianceControls = ({
   rooms,
+  setDataBase,
   state,
   newRooms,
   settingToggle,
@@ -54,7 +55,7 @@ const ApplianceControls = ({
       {!settingToggle ? (
         <h2>Applicances</h2>
       ) : (
-        <ApplicationSettings rooms={rooms} activeSetting={activeSetting} />
+        <ApplicationSettings rooms={rooms} activeSetting={activeSetting} setDataBase={setDataBase}/>
       )}
       {!settingToggle && appliances}
       {state.includes(null) && (
