@@ -3,7 +3,7 @@ import { SettingsControl, Week, Times, Alert } from "./ApplianceControlsStyles";
 import DayIcons from "../Utlity/DayIcons";
 import EditableText from "../Utlity/EditableText";
 
-const ApplicationSettings = ({ rooms, activeSetting }) => {
+const ApplicationSettings = ({ rooms, setDataBase, activeSetting }) => {
   // Variable holding setting jsx render props.rooms if settings is avaibable
   const configure = rooms.map((room) => {
     const controls = room.settings?.map((setting, index) => {
@@ -13,7 +13,11 @@ const ApplicationSettings = ({ rooms, activeSetting }) => {
       ) {
         return (
           <>
-            <EditableText text={room.appliance.names[index]} textTag={"h2"} />
+            <EditableText
+              text={room.appliance.names[index]}
+              setDataBase={setDataBase}
+              data={rooms}
+            />
             <SettingsControl key={index} selected={true}>
               <p>Select days device will be active: </p>
               <Week>

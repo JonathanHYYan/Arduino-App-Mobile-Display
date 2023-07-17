@@ -9,6 +9,7 @@ const MainPage = () => {
   const [database, setDataBase] = useState(data);
   const [roomSelected, setRoomSelected] = useState([true, false]);
   const [settingToggle, setSettingToggle] = useState(false);
+  console.log(database)
 
   const selectRoom = (index) => {
     const updateRooms = roomSelected.map((room, i) => {
@@ -51,6 +52,7 @@ const MainPage = () => {
         settingToggle={settingToggle}
         setSettingToggle={setSettingToggle}
         rooms={database}
+        setDataBase={setDataBase}
         state={roomSelected}
         newRooms={newRooms}
       />
