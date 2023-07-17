@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { TextInput } from "./EditableTextStyles";
 
-const EditableText = ({ text, textTag }) => {
+const EditableText = ({ text, data, setDataBase }) => {
   const [editState, setEditState] = useState(false);
   const [inputValue, setInputValue] = useState(text);
+
+  const updateDeviceName = (name) => {
+    setInputValue(name);
+    setDataBase();
+  }
 
   return (
     <>
@@ -11,7 +16,7 @@ const EditableText = ({ text, textTag }) => {
         <TextInput
           type="text"
           value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
+          onChange={(event) => updateDeviceName(event.target.value)}
         />
       ) : (
         <p onClick={() => setEditState(true)}>{inputValue}</p>
