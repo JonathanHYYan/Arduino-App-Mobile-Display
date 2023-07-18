@@ -4,7 +4,7 @@ export const data = [
     room: "kitchen",
     appliance: [
       {
-        id: "000",
+        id: "000000",
         name: "lights",
         switchOn: true,
         settings: {
@@ -17,7 +17,7 @@ export const data = [
         },
       },
       {
-        id: "001",
+        id: "000001",
         name: "roomba",
         switchOn: false,
         settings: {
@@ -36,7 +36,7 @@ export const data = [
     room: "bed",
     appliance: [
       {
-        id: "000",
+        id: "001000",
         name: "lights",
         switchOn: false,
         settings: {
@@ -49,7 +49,7 @@ export const data = [
         },
       },
       {
-        id: "001",
+        id: "001001",
         name: "kettle",
         switchOn: true,
         settings: {
