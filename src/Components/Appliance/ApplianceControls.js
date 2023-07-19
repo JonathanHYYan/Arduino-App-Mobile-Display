@@ -10,7 +10,7 @@ import {
 import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
 import { useState } from "react";
-import ApplicationSettings from "./ApplianceSettings";
+import ApplianceSettings from "./ApplianceSettings";
 
 const ApplianceControls = ({
   rooms,
@@ -19,19 +19,19 @@ const ApplianceControls = ({
   settingToggle,
   setSettingToggle,
 }) => {
-  const [activeSetting, setActiveSetting] = useState({
-    name: null,
-    index: null,
-  });
+  const [activeSetting, setActiveSetting] = useState(null);
   // Variable holiding appliances currently registered to the device rendered from props.rooms
   const appliances = rooms.map((room) => {
-    const controls = room.appliance.names.map((name, index) => {
+    const controls = room.appliance.map((device) => {
       return (
-        <Appliance key={index} selected={state[index]}>
-          <p>{name}</p>
+        <Appliance
+          key={room.id + device.id}
+          selected={state === room.room ? true : false}
+        >
+          <p>{device.name}</p>
           <Settings>
-            <Toggle state={room.appliance.boolean[index]} />
-            <Gear onClick={() => updateSettings(name, index)} />
+            <Toggle state={device.switchOn} />
+            <Gear onClick={() => updateSettings(device.id)} />
           </Settings>
         </Appliance>
       );
@@ -39,13 +39,13 @@ const ApplianceControls = ({
     return <>{controls}</>;
   });
 
-  const updateSettings = (name, index) => {
+  const updateSettings = (id) => {
     setSettingToggle(!settingToggle);
-    setActiveSetting({ name: name, index: index });
+    setActiveSetting(id);
   };
 
   const updateRooms = (room) => {
-    newRooms(room);
+    newRooms(room, rooms.length);
     setSettingToggle(false);
   };
 
@@ -54,15 +54,15 @@ const ApplianceControls = ({
       {!settingToggle ? (
         <h2>Applicances</h2>
       ) : (
-        <ApplicationSettings rooms={rooms} activeSetting={activeSetting} />
+        <ApplianceSettings rooms={rooms} activeSetting={activeSetting} />
       )}
       {!settingToggle && appliances}
-      {state.includes(null) && (
+      {state === "add" && (
         <IconGrid selected={true}>
           <NewIcon updateRooms={updateRooms} />
         </IconGrid>
       )}
-      {!state.includes(null) && !settingToggle ? (
+      {state === "add" && !settingToggle ? (
         <AddControl>
           <Plus />
         </AddControl>

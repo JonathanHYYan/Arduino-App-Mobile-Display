@@ -7,36 +7,22 @@ import { data } from "../../Assets/data";
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
   const [database, setDataBase] = useState(data);
-  const [roomSelected, setRoomSelected] = useState([true, false]);
+  const [roomSelected, setRoomSelected] = useState(data[0].room);
   const [settingToggle, setSettingToggle] = useState(false);
 
-  const selectRoom = (index) => {
-    const updateRooms = roomSelected.map((room, i) => {
-      if (index != null) {
-        return i === index ? true : false;
-      } else {
-        return null;
-      }
-    });
-    setRoomSelected(updateRooms);
+  const selectRoom = (roomName) => {
+    setRoomSelected(roomName);
     setSettingToggle(false);
   };
 
-  const newRooms = (room) => {
+  const newRooms = (room, id) => {
     const newRoom = {
+      id: id,
       room: room,
-      appliance: {
-        names: [],
-        boolean: [],
-      },
+      appliance: [],
     };
     setDataBase([...database, newRoom]);
-
-    const updateRooms = roomSelected.map(() => {
-      return false;
-    });
-
-    setRoomSelected([...updateRooms, true]);
+    setRoomSelected(room.room);
   };
 
   return (

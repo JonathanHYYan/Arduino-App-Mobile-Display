@@ -3,21 +3,20 @@ import { SettingsControl, Week, Times, Alert } from "./ApplianceControlsStyles";
 import DayIcons from "../Utlity/DayIcons";
 import EditableText from "../Utlity/EditableText";
 
-const ApplicationSettings = ({ rooms, activeSetting }) => {
+const ApplianceSettings = ({ rooms, activeSetting }) => {
   // Variable holding setting jsx render props.rooms if settings is avaibable
   const configure = rooms.map((room) => {
-    const controls = room.settings?.map((setting, index) => {
+    const controls = room.appliance.map((device) => {
       if (
-        activeSetting.name === room.appliance.names[index] &&
-        activeSetting.index === index
+        activeSetting === device.id
       ) {
         return (
           <>
-            <EditableText text={room.appliance.names[index]} textTag={"h2"} />
-            <SettingsControl key={index} selected={true}>
+            <EditableText text={device.name} textTag={"h2"} />
+            <SettingsControl key={device.name+device.id} selected={true}>
               <p>Select days device will be active: </p>
               <Week>
-                <DayIcons days={setting.days} />
+                <DayIcons days={device.settings.days} />
               </Week>
               <Times>
                 <p>Select time frames the device will switch on and off: </p>
@@ -26,7 +25,7 @@ const ApplicationSettings = ({ rooms, activeSetting }) => {
                 <p>
                   Enable vibrations to alert you when device starts and stops:
                 </p>
-                <Toggle state={setting.vibrate} />
+                <Toggle state={device.vibrate} />
               </Alert>
             </SettingsControl>
           </>
@@ -38,4 +37,4 @@ const ApplicationSettings = ({ rooms, activeSetting }) => {
   return <>{configure}</>;
 };
 
-export default ApplicationSettings;
+export default ApplianceSettings;

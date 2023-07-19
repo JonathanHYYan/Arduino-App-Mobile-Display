@@ -1,14 +1,14 @@
 import { Kitchen, Bed, Icon, Plus, AddIcon, Rooms } from "./RoomiconsStyles";
 
 const RoomIcons = ({ state, selectRoom, rooms, setSettingToggle }) => {
-  const roomOptions = rooms.map((obj, index) => {
+  const roomOptions = rooms.map((room, index) => {
     const roomSelect =
-      obj.room === "kitchen" ? <Kitchen /> : obj.room === "bed" ? <Bed /> : "";
+    room.room === "kitchen" ? <Kitchen /> : room.room === "bed" ? <Bed /> : "";
     return (
       <Icon
-        key={obj.room+index}
-        selected={state[index]}
-        onClick={() => selectRoom(index)}
+        key={room.id}
+        selected={state === room.room ? true : false}
+        onClick={() => selectRoom(room.room)}
       >
         {roomSelect}
       </Icon>
@@ -16,7 +16,7 @@ const RoomIcons = ({ state, selectRoom, rooms, setSettingToggle }) => {
   });
 
   const addRoom = () => {
-    selectRoom(null);
+    selectRoom('add');
     setSettingToggle(false);
   };
 
