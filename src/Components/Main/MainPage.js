@@ -7,7 +7,7 @@ import { data } from "../../Assets/data";
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
   const [database, setDataBase] = useState(data);
-  const [roomSelected, setRoomSelected] = useState(data[0].room);
+  const [roomSelected, setRoomSelected] = useState(data[0].id);
   const [settingToggle, setSettingToggle] = useState(false);
 
   const selectRoom = (roomName) => {
@@ -22,7 +22,7 @@ const MainPage = () => {
       appliance: [],
     };
     setDataBase([...database, newRoom]);
-    setRoomSelected(room.room);
+    setRoomSelected(room.id);
   };
 
   return (

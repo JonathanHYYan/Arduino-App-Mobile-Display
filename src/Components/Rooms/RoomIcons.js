@@ -7,8 +7,8 @@ const RoomIcons = ({ state, selectRoom, rooms, setSettingToggle }) => {
     return (
       <Icon
         key={room.id}
-        selected={state === room.room ? true : false}
-        onClick={() => selectRoom(room.room)}
+        selected={state === room.id ? true : false}
+        onClick={() => selectRoom(room.id)}
       >
         {roomSelect}
       </Icon>

@@ -26,7 +26,7 @@ const ApplianceControls = ({
       return (
         <Appliance
           key={room.id + device.id}
-          selected={state === room.room ? true : false}
+          selected={state === room.id ? true : false}
         >
           <p>{device.name}</p>
           <Settings>
