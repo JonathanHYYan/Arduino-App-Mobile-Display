@@ -52,7 +52,7 @@ const ApplianceControls = ({
   return (
     <Appliances>
       {!settingToggle ? (
-        <h2>Applicances</h2>
+        <h2>Appliances</h2>
       ) : (
         <ApplianceSettings rooms={rooms} activeSetting={activeSetting} />
       )}
