@@ -10,17 +10,24 @@ const MainPage = () => {
   const [roomSelected, setRoomSelected] = useState(data[0].id);
   const [settingToggle, setSettingToggle] = useState(false);
 
+  // Room Nav for room selection
   const selectRoom = (roomName) => {
     setRoomSelected(roomName);
+
+    // Disables App setting content toggle
     setSettingToggle(false);
   };
 
+  // Adds a new room to the local database which does not persist on reload
   const newRooms = (room, id) => {
+    // Creates a new room object
     const newRoom = {
       id: id,
       room: room,
       appliance: [],
     };
+
+    // Adds newly created object to existing database
     setDataBase([...database, newRoom]);
     setRoomSelected(room.id);
   };
