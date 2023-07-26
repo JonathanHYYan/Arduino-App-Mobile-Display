@@ -11,6 +11,7 @@ import {
 import logo from "../../Assets/logo.png";
 import { Link } from "react-router-dom";
 
+// Component renders sign in page on app launch
 const SignIn = () => {
   return (
     <>

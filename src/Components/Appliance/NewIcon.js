@@ -1,6 +1,7 @@
 import { Grid, GridIcon } from "./NewIconstyles";
 import { Bed, Kitchen } from "../Rooms/RoomiconsStyles";
 
+//  Component renders a list of icons selectable to represent the new room being created
 const NewIcon = ({updateRooms}) => {
   const newRooms = (room) => {
     updateRooms(room);
