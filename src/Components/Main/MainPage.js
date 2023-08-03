@@ -3,6 +3,7 @@ import RoomIcons from "../Rooms/RoomIcons";
 import ApplianceControls from "../Appliance/ApplianceControls";
 import { useState } from "react";
 import { data } from "../../Assets/data";
+import { Room } from "../Utlity/NewRoomClass";
 
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
@@ -20,12 +21,8 @@ const MainPage = () => {
 
   // Adds a new room to the local database which does not persist on reload
   const newRooms = (room, id) => {
-    // Creates a new room object
-    const newRoom = {
-      id: id,
-      room: room,
-      appliance: [],
-    };
+    // Creates a new room object, appliances are left as empty until added
+    const newRoom = new Room(id, room, []);
 
     // Adds newly created object to existing database
     setDataBase([...database, newRoom]);

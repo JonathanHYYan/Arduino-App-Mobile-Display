@@ -1,8 +1,8 @@
 class Appliance {
-  constructor(id, name, switchOn, settings) {
+  constructor(id, name) {
     this.id = id;
     this.name = name;
-    this.switchOn;
+    this.switchOn= false;
     this.settings = {
       days: [false, false, false, false, false, false, false],
       times: [
@@ -14,7 +14,7 @@ class Appliance {
   }
 }
 
-class NewRoom {
+class Room {
   constructor(id, name, appliances) {
     this.id = id;
     this.room = name;
@@ -24,5 +24,5 @@ class NewRoom {
 
 module.exports = {
     Appliance,
-    NewRoom,
+    Room,
 };
