@@ -64,7 +64,7 @@ const ApplianceControls = ({
           <NewIcon updateRooms={updateRooms} />
         </IconGrid>
       )}
-      {state === "add" && !settingToggle ? (
+      {state != "add" && !settingToggle ? (
         <AddControl>
           <Plus />
         </AddControl>
