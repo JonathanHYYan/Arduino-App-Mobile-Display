@@ -39,11 +39,13 @@ const ApplianceControls = ({
     return <>{controls}</>;
   });
 
+  // Calls back a payload for parent component to id which appliance is selected
   const updateSettings = (id) => {
     setSettingToggle(!settingToggle);
     setActiveSetting(id);
   };
 
+  // Calls back room object with a number to use as an id
   const updateRooms = (room) => {
     newRooms(room, rooms.length);
     setSettingToggle(false);

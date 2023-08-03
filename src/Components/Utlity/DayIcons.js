@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Day } from "./DayIconsStyles";
 import { useEffect } from "react";
 
+// Component takes in seven booleans to render which day it is on or off
 const DayIcons = ({ days }) => {
   const [activeDays, setActiveDays] = useState(days);
 
+  // Updates the list of rendered days with on/off states being toggled.
   const updateDays = (index) => {
     const updateDays = activeDays.map((bool, i) => {
       if (index != null) {
