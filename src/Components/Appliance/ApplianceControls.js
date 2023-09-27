@@ -16,6 +16,7 @@ const ApplianceControls = ({
   rooms,
   state,
   newRooms,
+  newAppliance,
   settingToggle,
   setSettingToggle,
 }) => {
@@ -46,9 +47,14 @@ const ApplianceControls = ({
   };
 
   // Calls back room object with a number to use as an id
-  const updateRooms = (room) => {
+  const addRoom = (room) => {
     newRooms(room, rooms.length);
     setSettingToggle(false);
+  };
+
+  const addApp = (room, appName) => {
+    setSettingToggle(true);
+    newAppliance(room, appName);
   };
 
   return (
@@ -61,12 +67,12 @@ const ApplianceControls = ({
       {!settingToggle && appliances}
       {state === "add" && (
         <IconGrid selected={true}>
-          <NewIcon updateRooms={updateRooms} />
+          <NewIcon addRoom={addRoom} />
         </IconGrid>
       )}
       {state != "add" && !settingToggle ? (
         <AddControl>
-          <Plus />
+          <Plus onClick={()=> addApp(state)}/>
         </AddControl>
       ) : null}
     </Appliances>

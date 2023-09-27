@@ -3,7 +3,7 @@ import RoomIcons from "../Rooms/RoomIcons";
 import ApplianceControls from "../Appliance/ApplianceControls";
 import { useState } from "react";
 import { data } from "../../Assets/data";
-import { Room } from "../Utlity/NewRoomClass";
+import { Appliance, Room } from "../Utlity/NewRoomClass";
 
 const MainPage = () => {
   // A data set needs to be imported or fetched from firebase on what applicances is available
@@ -29,6 +29,10 @@ const MainPage = () => {
     setRoomSelected(room.id);
   };
 
+  const newAppliance = (room, name, id) => {
+    const newAppliance = new Appliance()
+  };
+
   return (
     <DefaultPage>
       <RoomIcons
@@ -43,6 +47,7 @@ const MainPage = () => {
         rooms={database}
         state={roomSelected}
         newRooms={newRooms}
+        newAppliance={newAppliance}
       />
     </DefaultPage>
   );
