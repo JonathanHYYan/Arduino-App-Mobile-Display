@@ -29,6 +29,7 @@ const MainPage = () => {
     setRoomSelected(room.id);
   };
 
+  // Callback function to create a new appliance using classes
   const newAppliance = (room, name, id) => {
     const newAppliance = new Appliance()
   };

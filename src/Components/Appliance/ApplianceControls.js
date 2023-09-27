@@ -21,6 +21,7 @@ const ApplianceControls = ({
   setSettingToggle,
 }) => {
   const [activeSetting, setActiveSetting] = useState(null);
+
   // Variable holiding appliances currently registered to the device rendered from props.rooms
   const appliances = rooms.map((room) => {
     const controls = room.appliance.map((device) => {
@@ -46,12 +47,13 @@ const ApplianceControls = ({
     setActiveSetting(id);
   };
 
-  // Calls back room object with a number to use as an id
+  // Calls back function room object with a number to use as an id
   const addRoom = (room) => {
     newRooms(room, rooms.length);
     setSettingToggle(false);
   };
 
+  // Callback function to add a new Appliance
   const addApp = (room, appName) => {
     setSettingToggle(true);
     newAppliance(room, appName);
