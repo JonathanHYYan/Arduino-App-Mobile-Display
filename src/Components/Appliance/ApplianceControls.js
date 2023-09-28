@@ -11,6 +11,7 @@ import Toggle from "../Utlity/Toggle";
 import NewIcon from "./NewIcon";
 import { useState } from "react";
 import ApplianceSettings from "./ApplianceSettings";
+import { Link } from "react-router-dom";
 
 const ApplianceControls = ({
   rooms,
@@ -74,7 +75,9 @@ const ApplianceControls = ({
       )}
       {state != "add" && !settingToggle ? (
         <AddControl>
-          <Plus onClick={()=> addApp(state)}/>
+          <Link to="/NewAppliance">
+            <Plus/>
+          </Link>
         </AddControl>
       ) : null}
     </Appliances>

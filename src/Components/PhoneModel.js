@@ -3,6 +3,7 @@ import { MobileTemplate } from "./PhoneModelStyles";
 import SignIn from "./SignIn/SignIn";
 import MainPage from "./Main/MainPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NewAppliance from "./NewAppliance/NewAppliance";
 
 // Component displays a sign page
 const Template = () => {
@@ -43,6 +44,7 @@ const Template = () => {
           <Routes>
             <Route path="/" element={<SignIn />} />
             <Route path="/main" element={<MainPage />} />
+            <Route path="/NewAppliance" element={<NewAppliance/>}/>
           </Routes>
         </BrowserRouter>
       </MobileTemplate>
