@@ -3,9 +3,14 @@ import { MobileTemplate } from "./PhoneModelStyles";
 import SignIn from "./SignIn/SignIn";
 import MainPage from "./Main/MainPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { data } from "../Assets/data";
 
 // Component displays a sign page
 const Template = () => {
+  const [database, setDatabase] = useState(data)
+  const [roomSelected, setRoomSelected] = useState(data[0].id);
+  const [settingToggle, setSettingToggle] = useState(false);
+
   // List of phone models with their xy dimensions in mm
   const phoneList = [
     { name: "iPhone 12", height: 146.7, width: 71.5 },
@@ -15,6 +20,8 @@ const Template = () => {
 
   // Renders first phone model in list on load
   const [selectedPhone, setSelectedPhone] = useState(0);
+
+  
 
   // State change on phone model selection
   const handleChange = (e) => {
@@ -42,7 +49,8 @@ const Template = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<SignIn />} />
-            <Route path="/main" element={<MainPage />} />
+            <Route path="/main" element={<MainPage
+            roomSelected={roomSelected} />} />
           </Routes>
         </BrowserRouter>
       </MobileTemplate>
